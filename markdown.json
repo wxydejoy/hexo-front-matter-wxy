@@ -1,0 +1,20 @@
+{
+    "note": {
+        "prefix": ">note",
+        "body": [
+            "{% note ${1:info} ${2:title} %}",
+            "info、important、tip、caution、warning",
+            "{% endnote %}"
+        ],
+        "description": "note"
+    },
+    "fold": {
+        "prefix": ">fold",
+        "body": [
+            "{% fold ${1:title} %}",
+            "i",
+            "{% endfold %}"
+        ],
+        "description": "fold"
+    }
+}

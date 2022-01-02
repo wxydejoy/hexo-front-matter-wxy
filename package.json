@@ -1,0 +1,78 @@
+{
+	"name": "hexo-front-matter-wxy",
+	"displayName": "hexo-front-matter-wxy",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.63.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "hexo-front-matter-wxy.frontmatter",
+				"title": "hexo-front-matter-wxy"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "hexo-front-matter-wxy.frontmatter",
+				"key": "ctrl+alt+shift+f",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "hexo-front-matter-wxy.frontmatter",
+					"group": "navigation"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "markdown",
+				"path": "./markdown.json"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "HEXO插件设置",
+			"properties": {
+				"hexo-front-matter-wxy.cover": {
+					"type": "string",
+					"default": "thumbnail",
+					"description": "封面代码设置"
+				}
+			}
+		}
+
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.63.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"eslint": "^8.1.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.3",
+		"typescript": "^4.4.4",
+		"@vscode/test-electron": "^1.6.2"
+	},
+	"dependencies": {
+		"moment": "^2.29.1"
+	}
+}
